@@ -11,9 +11,6 @@ body{
 }
 .row {
 	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-	flex: 0 1 auto;
 }
 .row:after, .menu:after	{
 	content: "";
@@ -38,6 +35,8 @@ body{
 }
 .menu li{
 	border-left: 1px solid #2c71b8;
+	width: 25%;
+	position: relative;
 
 }
 .menu li:last-child {
@@ -55,4 +54,68 @@ body{
 .menu a:hover {
 	background-color: #2c71b8;
 	color: white;
+}
+.col-md-9 {
+	width: 75%;
+}
+.search:after, .cart:after {
+	content: "";
+	display: block;
+	clear: both;
+}
+.some1 {
+	border: 1px solid #2c71b8;
+	height: 40px;
+	width: 150px;
+	background-color: transparent;
+	color: #2c71b8;
+	font-size: 16px;
+	margin-left: 30px;
+	padding: 10px;
+	margin-top: 5px;
+	background-image: url(images/search.png) ;
+	background-repeat: no-repeat;
+	background-position: right;
+}
+.cart{
+	position: relative;
+	background-image: url(images/icon.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 41px;
+	height: 40px;
+	background-color: white;
+	text-align: center;
+	margin-top: 5px;
+	margin-left: 10px;
+	display: flex;
+}
+.products-count {
+	position: absolute;
+	background-color: #2c71b8;
+	color: white;
+	width: 20px;
+	height: 20px;
+	text-align: center;
+	border-radius: 50%;
+	margin: -9px ; 
+	z-index: 10;
+}
+.submenu {
+	display: none;
+	position: absolute;
+	background-color: #2c71b8;
+	color: white;
+	width: 100%;
+	text-align: center;
+
+}
+.menu li:hover .submenu {
+	display: block;
+}
+
+.submenu:after {
+	content: "";
+	display: block;
+	clear: both;
 }
