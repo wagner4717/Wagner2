@@ -5,6 +5,10 @@ body{
 	font-family: 'Roboto', sans-serif;
 	background-image: url("images/patt.png");
 }
+.header{
+	background-color: rgba(255,255,255,0.75);
+	padding: 25px 0;
+}
 .container{
 	width: 1170px;
 	margin: 0 auto;
@@ -23,10 +27,10 @@ body{
 .col-md-6 {
 	width: 50%
 }
-.header{
-	background-color: rgba(255,255,255,0.75);
-	padding: 25px 0;
-}
+
+
+
+/* контекстное меню */
 .menu {
 	display: flex;
 	flex-direction: row;
@@ -37,7 +41,6 @@ body{
 	border-left: 1px solid #2c71b8;
 	width: 25%;
 	position: relative;
-
 }
 .menu li:last-child {
 	border-right: 1px solid #2c71b8;
@@ -50,11 +53,36 @@ body{
 	line-height: 50px;
 	font-size: 21px;
 	color: #2c71b8;
+	position: relative;
 }
 .menu a:hover {
 	background-color: #2c71b8;
 	color: white;
 }
+.submenu {
+	position: absolute;
+	background-color: #2c71b8;
+	width: 292px;
+	z-index: 10;	
+	display: none;
+}
+.submenu a{
+	color: white;
+	height: 40px;
+	width: 292px;
+	text-align: left;
+	padding-left: 30px;
+}
+.submenu a:hover {
+	color: #2c71b8;
+	background-color: white;
+	display: block;
+}
+.menu li:hover .submenu{
+	display: block;
+}
+
+/*поиск и корзина*/
 .col-md-9 {
 	width: 75%;
 }
@@ -101,21 +129,279 @@ body{
 	margin: -9px ; 
 	z-index: 10;
 }
-.submenu {
-	display: none;
-	position: absolute;
-	background-color: #2c71b8;
-	color: white;
-	width: 100%;
-	text-align: center;
 
-}
-.menu li:hover .submenu {
-	display: block;
-}
-
-.submenu:after {
+.submenu:after, .product1:after, .menu-sort:after {
 	content: "";
 	display: block;
 	clear: both;
+}
+.col-md-1 {
+	width: 22.5%
+}
+
+
+/*второй блок*/
+.col-md-2 {
+	width: 77.5%
+}
+.col2{
+	border-top: 1px solid white;
+	padding: 15px;
+}
+.col-md-2:after, .col2:after {
+	content: "";
+	display: block;
+	clear: both;
+}
+.list {
+	color: rgba(255,255,255,0.60);
+	font-size: 12px;
+}
+.section {
+	color: white;
+	font-size: 50px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	display: flex;
+}
+.section:after {
+	content: "";
+	display: block;
+	clear: both;
+}
+.col-md-55 {
+	width: 72%;
+}
+.col-md-66 {
+	width: 28%;
+}
+.menu2 {
+	display: flex;
+	position: relative;
+	top:15px;
+}
+.menu2 li{
+	border: 1px solid white;
+	width: 240px;
+	height: 35px;
+	background-color: #2c71b8;
+	color: white;
+	font-size: 15px;
+	padding: 10px;
+	display: block;
+	background-image: url(images/arrow.png);
+	background-repeat: no-repeat;
+	background-position: right;
+}
+.submenu2 {
+	width: 100%;
+	position: absolute;
+	top: 35px;
+	left: 0px;
+	background-color: #2c71b8;
+	z-index: 1;
+	display: none;
+}
+.submenu2 li:hover {
+	background-color: white;
+	color: #2c71b8;
+	display: block;
+}
+.menu2 li:hover .submenu2{
+	display: block;
+}
+
+
+
+/*столбики товаров*/
+.line1 {
+	display: flex;
+	justify-content: space-between;
+	padding-top: 20px;
+}
+.line2 {
+	display: flex;
+	justify-content: space-between;
+	padding-top: 20px; 
+}
+.line3 {
+	display: flex;
+	justify-content: space-between;
+	padding-top: 20px;
+}
+
+
+/*картинки*/
+.images {
+	background-color: rgba(255,255,255,0.50);
+	width: 263px;
+	height: 180px;
+	text-align: center;
+    position: relative;
+}
+.product-img {
+	margin-top: 43px;
+}
+.image-zoom {
+	background-image: url(images/zoom.png);
+	background-repeat: no-repeat;
+	position: absolute;
+	width: 30px;
+	height:30px;
+	border: 1px solid #2c71b8;
+	background-position: center;
+	display: flex;
+	right: 10px;
+	top: 10px;
+}
+.image-like {
+	background-image: url(images/like.png);
+	background-repeat: no-repeat;
+	position: absolute;
+	width: 30px;
+	height:30px;
+	border: 1px solid #2c71b8;
+	background-position: center;
+	display: flex;
+	right: 10px;
+	top: 50px;
+}
+.image-zoom:hover {
+	background-image: url(images/zoom2.png);
+	background-color: #2c71b8;
+}
+.image-like:hover, .liked {
+	background-image: url(images/like2.png);
+	background-color: #2c71b8;
+}
+
+
+/* описание товара*/
+.product1{
+	border: 1px solid white;
+	width: 265px;
+	height: 620px;
+	background-color: rgba(44,113,184,0.8);
+	color: white;
+}
+.product1 h1{
+	font-size: 33px;
+	padding-left: 10px;
+	font-weight: bold;
+	margin-top: 10px;
+}
+.product1 p{
+	font-size: 21px;
+	padding: 10px;
+}
+.p {
+	text-align: center;
+	font-size: 33px;
+	font-weight: bold;
+}
+.second-number{
+	font-size: 20px;
+	vertical-align: top;
+}
+
+
+/*кнопки*/
+.button1 {
+	border: 1px solid white;
+	height: 52px;
+	width: 200px;
+	font-size: 20px;
+	text-align: center;
+	margin: 0px auto;
+	padding-top:15px;
+	font-weight: bold;
+	background-color:  #2c71b8;
+}
+.button2 {
+	border: 1px solid white;
+	height: 52px;
+	width: 200px;
+	font-size: 20px;
+	text-align: center;
+	margin: 10px auto;
+	padding-top:15px;
+	padding-right: 15px;
+	font-weight: bold;
+	background-color:  #2c71b8;
+	background-image: url(images/cart.png);
+	background-repeat: no-repeat;
+	background-position: 90% 50%;
+}
+.button1:hover, .button2:hover {
+	background-color: rgba(255,255,255,0.3);
+}
+
+/*фильтер*/
+.filter {
+	height: 843px;
+	border-right: 1px solid white;
+	background-color: rgba(255,255,255,0.2);
+}
+.filter-name1 {
+	padding-top: 33px;
+	padding-left: 30px;
+}
+.name {
+	color: white;
+	font-size: 21px;
+	font-weight: 700;
+}
+.filter-color {
+	padding-top: 65px;
+	padding-left: 30px;
+}
+.filter-ram {
+	padding-top: 65px;
+	padding-left: 30px;
+}
+.filter-checkbox label {
+	position: relative;
+	color: white;
+	font-size: 21px;
+	font-weight: 300;
+	display: block;
+}
+.filter-checkbox label:before {
+	content: "";
+	display: block;
+	width: 10px;
+	height: 10px;
+	border: 1px solid white;
+	margin-right: 11px;
+}
+input[type="checkbox"]:checked + label:before {
+	background-color: white;
+}
+input[type="checkbox"] {
+	display: none;
+}
+.text-show-more {
+	color: white;
+	font-size: 21px;
+	text-align: center;
+	font-weight: 300;
+}
+.filter-submit{
+	text-align: center;
+	margin-top: 26px;
+}
+.filter-submit button {
+	background-color: #2c71b8;
+	color: white;
+	width: 210px;
+	height: 50px;
+    border: 1px solid white;
+    font-size: 21px;
+}
+/*Сладер*/
+.slider {
+	height: 225px;
+	font-size: 50px;
+	text-align: center;
+	padding-top: 90px;
 }
